@@ -1,8 +1,2 @@
-=IF(OR(TRIM(INDEX(Table2[Contractor], COUNTA(Table2[Contractor])))="Other"),"",CHAR(80))
-
-
-
-=IF(ISNA(MATCH(INDEX(Table2[Type of Project], COUNTA(Table2[Type of Project])), {"Other"}, 0)), CHAR(80), "")
-   
-
-pakai ini, tetap aja terceklis terus dia keduanya
+=IF(OR(INDEX(Table2[Contractor],COUNTA(Table2[Contractor]))="",ISNUMBER(MATCH(INDEX(Table2[Contractor],COUNTA(Table2[Contractor])),{"Mechanical","Electrical","Civil"},0))),"",CHAR(80))
+=IF(OR(INDEX(Table2[Type of Project],COUNTA(Table2[Type of Project]))="",ISNUMBER(MATCH(INDEX(Table2[Type of Project],COUNTA(Table2[Type of Project])),{"Mechanical","Electrical","Civil"},0))),"",CHAR(80))
